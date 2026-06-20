@@ -18,3 +18,7 @@ operations_dict = {
 }
 
 number1 = int(input("Enter First number:"))
+for symbol in operations_dict:
+    print(symbol)
+op_symbol = input("Pick an operation from the above symbols:")
+number2 = int(input("Enter Second number:"))
