@@ -24,4 +24,5 @@ op_symbol = input("Pick an operation from the above symbols:")
 number2 = int(input("Enter Second number:"))
 
 calculator_function = operations_dict[op_symbol]
-calculator_function(number1, number2)
+output =calculator_function(number1, number2)
+print(f"{number1} {op_symbol} {number2} = {output}")
