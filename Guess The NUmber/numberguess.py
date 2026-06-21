@@ -1,4 +1,6 @@
 import random 
+EASY_LEVEL_ATTEMPTS = 10
+HARD_LEVEL_ATTEMPTS = 5
 
 def set_difficulty(level_chosen):
     if level_chosen == 'easy':
