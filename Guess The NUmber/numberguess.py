@@ -1,12 +1,15 @@
 import random 
+import logo_art
 EASY_LEVEL_ATTEMPTS = 10
 HARD_LEVEL_ATTEMPTS = 5
 
 def set_difficulty(level_chosen):
     if level_chosen == 'easy':
      return EASY_LEVEL_ATTEMPTS
-    else:
+    elif level_chosen == 'hard':
      return HARD_LEVEL_ATTEMPTS
+    else:
+      return 
 
 def check_answer(guessed_number, answer, attempts):
   if guessed_number < answer:
@@ -20,12 +23,16 @@ def check_answer(guessed_number, answer, attempts):
 
 
 def game():
+ print(logo_art.logo)
  print("Let me think of a number between 1 to 50")
  answer = random.randint(1, 50)
- print(answer)
+#  print(answer)
 
  Level = input("Choose the level of difficulty... Type 'easy' or 'hard'")
  attempts = set_difficulty (Level)
+ if attempts!=EASY_LEVEL_ATTEMPTS and attempts!= HARD_LEVEL_ATTEMPTS:
+   print("You have entered wrong difficulty level... Play Again!!!")
+   return
  guessed_number = 0
  while guessed_number != answer:
 
@@ -35,7 +42,7 @@ def game():
   if attempts == 0:
    print("You are out of guesses... YOY LOSE!")
    return
-  else:
+  elif guessed_number!=answer:
     print("Guess Number again . . . ")
 
 game()
