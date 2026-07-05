@@ -18,3 +18,8 @@ for i in range(1, num_of_symbols+1):
     char = random.choice(symbols)
     password += char
 
+for i in range(1, num_of_numbers+1):
+    char = random.choice(numbers)
+    password += char
+
+print(password)
