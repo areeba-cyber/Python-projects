@@ -24,3 +24,5 @@ for i in range(1, num_of_numbers+1):
     password += char
 
 print(password)
+random.shuffle(password)
+print(password)
