@@ -1,9 +1,9 @@
 import requests
 
-city_name = input("Enter city name: ")
-API_key = '9b3f643fb121093e79165f75b00edd9e'
+API_KEY = "9b3f643fb121093e79165f75b00edd9e"
+city = input("Enter city name: ")
 
-url = "https://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={API_key}&units={metric}"
+url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric"
 
 response = requests.get(url)
 data = response.json()
@@ -13,10 +13,10 @@ if data["cod"] == 200:
     humidity = data["main"]["humidity"]
     weather = data["weather"][0]["description"]
 
-    print(f"\n Weather in {city_name}")
+    print(f"\nWeather in {city}")
     print(f"Temperature: {temperature}°C")
-    print(f"Humidity : {humidity}%")
-    print(f"Weather: {weather}")
+    print(f"Humidity: {humidity}%")
+    print(f"Condition: {weather}")
 
 else:
     print("City not found!")
