@@ -17,3 +17,6 @@ if data["cod"] == 200:
     print(f"Temperature: {temperature}°C")
     print(f"Humidity : {humidity}%")
     print(f"Weather: {weather}")
+
+else:
+    print("City not found!")
