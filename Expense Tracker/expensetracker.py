@@ -7,4 +7,6 @@ while True:
     print("3. Total expense")
     print("4. End")
 
+    choice = input("Enter your choice :")
+    
 
