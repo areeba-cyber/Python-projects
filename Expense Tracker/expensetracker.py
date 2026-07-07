@@ -29,5 +29,21 @@ while True:
             for expense in expenses:
                 print(f"{expense['expense_name']} - Rs{expense['expense_amount']}")
 
+    
+    elif choice == "3":
+        total = 0
+         
+        for expense in expenses:
+             total += expense[expense_amount]
+             print(f"\nTotal Expense = Rs {total}")
+
+    elif choice == "4":
+        print("Thank you!")
+        break
+
+    else:
+        print("Invalid Choice!")
+             
+
 
 
