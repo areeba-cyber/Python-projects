@@ -20,6 +20,8 @@ while True:
         expenses.append(expense)
         print("Expense Added Successfully!")
 
-        
+    elif choice == "2":
+        print("\n These are the expenses :")
+
 
 
