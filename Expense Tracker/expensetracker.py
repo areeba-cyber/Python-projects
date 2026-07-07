@@ -13,7 +13,7 @@ while True:
         expense_amount = float(input("Add expense amount :"))
 
         expense = {
-            "expense_name ": expense_name,
+            "expense_name": expense_name,
             "expense_amount": expense_amount
         }
 
@@ -27,7 +27,7 @@ while True:
             print("There is no expense in the list")
         else :
             for expense in expenses:
-                print(f"{expense[expense_name]} - Rs{expense[expense_amount]}")
+                print(f"{expense['expense_name']} - Rs{expense['expense_amount']}")
 
 
 
