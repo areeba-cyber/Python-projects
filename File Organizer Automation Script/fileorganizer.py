@@ -25,3 +25,28 @@ for file in os.listdir(folder_path):
     # Ignore folders
     if os.path.isdir(file_path):
         continue
+
+    extension = os.path.splitext(file)[1].lower()
+
+    moved = False
+
+    for folder_name, extensions in file_types.items():
+
+        if extension in extensions:
+
+            destination = os.path.join(folder_path, folder_name)
+
+            os.makedirs(destination, exist_ok=True)
+
+            shutil.move(file_path, os.path.join(destination, file))
+
+            print(f"{file} moved to {folder_name}")
+
+            moved = True
+            break
+
+    if not moved:
+        destination = os.path.join(folder_path, "Others")
+        os.makedirs(destination, exist_ok=True)
+        shutil.move(file_path, os.path.join(destination, file))
+        print(f"{file} moved to Others")
