@@ -50,3 +50,4 @@ for file in os.listdir(folder_path):
         os.makedirs(destination, exist_ok=True)
         shutil.move(file_path, os.path.join(destination, file))
         print(f"{file} moved to Others")
+print("\nFolder organized successfully!")
