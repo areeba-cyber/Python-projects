@@ -1,3 +1,3 @@
 from bs4 import BeautifulSoup
 
-with open
+with open('home.html', 'r')
