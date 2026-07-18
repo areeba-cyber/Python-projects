@@ -5,3 +5,4 @@ html_text = requests.get('https://www.timesjob.com/candidate/job-search.html?sea
 soup = BeautifulSoup(html_text, 'lxml')
 job = soup.find('li', class_= 'clearfix job-bx wht-shd-bx')
 company_name = job.find('h3', class_= 'joblist-comp-name').text.replace(' ','')
+skills = job.find('span', class_= 'srp-skills').text.replace(' ','')
