@@ -3,12 +3,17 @@ import requests
 
 html_text = requests.get('https://www.timesjob.com/candidate/job-search.html?searchType=personalizedSearch&from=submit&txtKeywords=python&txtLocation=').text
 soup = BeautifulSoup(html_text, 'lxml')
-job = soup.find('li', class_= 'clearfix job-bx wht-shd-bx')
-company_name = job.find('h3', class_= 'joblist-comp-name').text.replace(' ','')
-skills = job.find('span', class_= 'srp-skills').text.replace(' ','')
-published_date = job.find('span', class_= 'sim-posted')
+jobs = soup.find_all('li', class_= 'clearfix job-bx wht-shd-bx')
 
-print(f'''
-Company Name = {company_name}
-Required Skills = {skills}      
-''')
+for job in jobs:
+    published_date = job.find('span', class_= 'sim-posted').span.text
+    if 'few' in published_date:
+
+     company_name = job.find('h3', class_= 'joblist-comp-name').text.replace(' ','')
+     skills = job.find('span', class_= 'srp-skills').text.replace(' ','')
+     
+ 
+     print(f''' 
+     Company Name = {company_name}
+     Required Skills = {skills}
+     ''')
